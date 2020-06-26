@@ -1,11 +1,11 @@
 # Site settings
 author: Thomas Muscarello
-title: 
+title: Why did you decide to study Software Engineering
 header-img: img/home-bg.png
 email: muscarello.thomas@gmail.com
 copyright_name: Thomas Muscarello
 description: > # this means to ignore newlines until "baseurl:"
-  
+  The First Mile
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  Thomas-Muscarello
