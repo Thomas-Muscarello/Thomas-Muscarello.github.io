@@ -1,0 +1,37 @@
+---
+layout: post
+title:      "Last Call!"
+date:       2021-04-08 23:12:47 +0000
+permalink:  last_call
+---
+
+
+I am officially creating my final project, which means it is the last beer related themed project I will have for quite some time…unless a beer focused organization wants to hire me, in which I am COMPLETY OPEN!
+
+Anyway, this project focused on using react and redux, and I once again created a User who has many beer recipes. Saying that this project was easy would be a complete and total lie. I was however able to look back at my studies and previous project for some guidance.
+
+The project in a nutshell goes as followed:
+•	You can either Login or Sign-Up
+•	Once you are in, you have a profile
+•	You can make a new beer on your profile by filling in the “Create a Beer” form.
+•	Hit “Brew”
+•	The beer’s title will populate as a link under your Beer List
+•	If you click on the Beer Link name, it will bring you to the individual beer’s page.
+•	From there you can delete the beer, which will then redirect you to the profile.
+•	There is also a NavBar that allows you to pass between the profile and a page of all your beers.
+•	The Navbar also hosts the Logout feature.
+
+I would say the hardest part I had with this project was the combination of having to deal with the fetch requests and the actions of my reducers. After hours of working on the project and attending almost every office hour under the sun, I was able to understand its flow. If I wanted to add an action, I would first have to ensure that the action exists in the backend controller, for example creating a new beer.
+
+Once the createBeer function was made in my controller, I would then need to fetch it in my api.js. I would need to pass in the necessary arguments for the proper route in order for the fetch to work with the URL, and then add the method, headers, and body followed by a .then(parseJson).
+
+Once that function(addBeer()) within the api.js was create, I imported it into my beersAction.js. I would then need to create a const of newBeer that would return a dispatch of the function addBeer, and then the returned data would then be used as the payload for another dispatch within createBeer, while its type is “ADD_BEER”.
+
+This required me to then go to my beerReducer, and have a case “ADD_BEER” which would return [...state, action.payload].
+
+The final task I needed to do was import newBeer from my beersActions to my NewBeer Component. After my form was created, on my handleSubmit button I call:
+this.props.dispatch(newBeer(this.props.user.id, this.state))
+The newBeer() needs to take in a user ID as well as the info of the new beer for the addBeer() within it. And this was basically rinse and repeat (for the most part) for any other action I would want to add.
+
+Overall, I was really happy with this project and I am looking forward to seeing what my future holds as a software engineer.
+
